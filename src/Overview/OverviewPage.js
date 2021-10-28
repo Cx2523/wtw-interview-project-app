@@ -26,8 +26,8 @@ const StyledTableHeaderDiv = styled(StyledTableRowDiv)`
   padding: 0 0 10px 10px;
 `;
 
-async function fetchPersonData() {
-  return await fetch('/Person');
+async function fetchAgentData() {
+  return await fetch('/Agent');
 }
 
 function Row({ rowNumber, rowData, columnConfig, hasAlternatingRowColors }) {
@@ -77,7 +77,7 @@ function OverviewPage() {
 
   React.useEffect(() => {
     async function getPersonData() {
-      const response = await fetchPersonData()
+      const response = await fetchAgentData()
       const data = await response.json();
       setPersons(data);
     }
@@ -89,7 +89,7 @@ function OverviewPage() {
     <Table
       data={persons}
       columnConfig={overviewTableColumnConfig}
-      idKey="personId"
+      idKey="agentId"
       hasAlternatingRowColors
     />
   );

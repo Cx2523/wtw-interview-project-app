@@ -4,10 +4,10 @@ import EditButton from './EditButton';
 
 export const overviewTableColumnConfig = [
   {
-    label: 'Person Id',
-    dataKey: 'personId',
+    label: 'Agent Id',
+    dataKey: 'agentId',
     width: 100,
-    cellRenderer: (rowData) => rowData.personId,
+    cellRenderer: (rowData) => rowData.agentId,
   },
   {
     label: 'First Name',
@@ -31,8 +31,6 @@ export const overviewTableColumnConfig = [
     label: '',
     dataKey: 'personId',
     width: 100,
-    cellRenderer: (rowData) => (
-      <EditButton personId={rowData.personId} />
-    ),
+    cellRenderer: (rowData) => <EditButton personId={rowData.agentId} />,
   },
 ];
